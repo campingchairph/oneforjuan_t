@@ -21,6 +21,8 @@ html{height:100%;overflow:hidden;}body{height:100%;overflow:hidden;background:#0
   html,body{background:var(--bg);}
   #app{max-width:100%;box-shadow:none;}
 }
+  html,body{background:var(--bg);}
+}
 
 /* ── SCREENS ── */
 .screen{display:none;}
