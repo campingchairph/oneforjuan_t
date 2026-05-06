@@ -239,6 +239,7 @@ function selectTime(el){document.querySelectorAll('#time-chips .time-chip').forE
 var liveTimer=null, liveSeconds=0, liveDuration=0;
 function goLive(){
   closeSheet('sheet-declare');
+  renderQuestCategories();
   // get selected time
   var sel=document.querySelector('#time-chips .time-chip.selected');
   var hrs=sel?parseInt(sel.textContent):1;
@@ -298,7 +299,7 @@ function endLive(){
 }
 
 // ── accept quest ──
-function acceptQuest(){closeSheet('sheet-quest');go('s-btask');}
+function acceptQuest(){setActiveJob('bayani');closeSheet('sheet-quest');go('s-btask');}
 
 // ── checklist ──
 function toggleCheck(el){
@@ -341,14 +342,18 @@ function buildNav(id,active,mode){
     {id:'profile',label:'PROFILE',icon:'◉',dest:d.profile}
   ];
   const ac=mode==='bayani'?'var(--green)':'var(--sun)';
-  el.innerHTML=items.map(it=>`
-    <button class="nav-btn" onclick="go('${it.dest}')">
-      <div class="nav-icon-wrap" style="background:${it.id===active?ac+'22':'transparent'};">
-        <span style="font-size:18px;color:${it.id===active?ac:'#504838'};">${it.icon}</span>
-      </div>
-      <div class="nav-label" style="color:${it.id===active?ac:'#504838'};">${it.label}</div>
-    </button>
-  `).join('');
+  el.innerHTML=items.map(function(it){
+    var lock=(it.id==='profile'&&activeJob)?'🔒':'';
+    var activeBg=it.id===active?ac+'22':'transparent';
+    var activeColor=it.id===active?ac:'#504838';
+    var btn='<button class="nav-btn" onclick="go(&quot;'+it.dest+'&quot;)">';
+    btn+='<div class="nav-icon-wrap" style="background:'+activeBg+';">';
+    btn+='<span style="font-size:18px;color:'+activeColor+';">'+it.icon+'</span>';
+    btn+='</div>';
+    btn+='<div class="nav-label" style="color:'+activeColor+';">'+it.label+lock+'</div>';
+    btn+='</button>';
+    return btn;
+  }).join('');
 }
 
 // ── stars bg ──
@@ -541,6 +546,7 @@ function buildStarsL(){
 // ── UPDATE confirmRole to go to lakan ──
 // Override the existing confirmRole
 confirmRole = function(){
+  refreshRoleLockUI();
   if(activeRole==='bayani') go('s-bmap');
   else go('s-lmap');
 };
@@ -697,6 +703,121 @@ function buildFullSprite(av,sz,outfit){
 }
 
 
+// ── ACTIVE JOB STATE ──
+var activeJob = null; // { type: 'bayani'|'lakan', status: 'active' }
+
+function setActiveJob(type) {
+  activeJob = { type: type, status: 'active' };
+}
+
+function clearActiveJob() {
+  activeJob = null;
+}
+
+function getRoleLockMsg() {
+  if (!activeJob) return null;
+  if (activeJob.type === 'bayani') return 'You have an active quest. Complete it before switching roles.';
+  if (activeJob.type === 'lakan') return 'You have an active quest posted. Complete or cancel it before switching.';
+  return null;
+}
+
+function tryGoRole() {
+  var msg = getRoleLockMsg();
+  if (msg) {
+    showRoleLockToast(msg);
+    return;
+  }
+  go('s-role');
+}
+
+function showRoleLockToast(msg) {
+  var t = document.getElementById('role-lock-toast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'role-lock-toast';
+    t.style.cssText = 'position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#0F0D0A;color:#fff;font-family:var(--px);font-size:7px;padding:10px 16px;border-radius:8px;z-index:200;text-align:center;line-height:1.8;max-width:320px;border:1px solid var(--ember);letter-spacing:.5px;';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.display = 'block';
+  t.style.opacity = '1';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(function(){ t.style.opacity='0'; setTimeout(function(){ t.style.display='none'; },300); }, 3000);
+}
+
+// ── QUEST CATEGORY CARDS ──
+var QUEST_CATEGORIES = [
+  { icon: '🛍️', label: 'Buy Item',    count: 3, sheet: 'sheet-quest' },
+  { icon: '🪑', label: 'Queue Fill',  count: 1, sheet: 'sheet-quest' },
+  { icon: '🎟️', label: 'Buy Ticket', count: 2, sheet: 'sheet-quest' },
+  { icon: '📄', label: "Gov't Queue", count: 1, sheet: 'sheet-quest' },
+];
+
+function renderQuestCategories() {
+  var el = document.getElementById('quest-categories');
+  var lbl = document.getElementById('quest-section-label');
+  if (!el) return;
+  if (!document.getElementById('status-dot') || document.getElementById('status-dot').style.background !== 'var(--green)') {
+    el.style.display = 'none';
+    if (lbl) lbl.style.display = 'none';
+    return;
+  }
+  el.style.display = 'block';
+  if (lbl) lbl.style.display = 'block';
+  el.innerHTML = QUEST_CATEGORIES.map(function(c) {
+    var plural = c.count !== 1 ? 's' : '';
+    var d = '<div onclick="openSheet(&quot;'+c.sheet+'&quot;)" style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:10px;cursor:pointer;display:flex;align-items:center;gap:14px;">';
+    d += '<div style="width:44px;height:44px;background:var(--sun-light);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">'+c.icon+'</div>';
+    d += '<div style="flex:1;">';
+    d += '<div style="font-family:var(--px);font-size:8px;color:var(--ink);margin-bottom:4px;">'+c.label+'</div>';
+    d += '<div style="font-size:12px;color:var(--ink-soft);">'+c.count+' quest'+plural+' nearby</div>';
+    d += '</div>';
+    d += '<div style="font-family:var(--px);font-size:8px;color:var(--ember);">→</div>';
+    d += '</div>';
+    return d;
+  }).join('');
+}
+
+// ── ROLE LOCK UI on s-role ──
+function refreshRoleLockUI() {
+  var banner = document.getElementById('role-lock-banner');
+  var msg = getRoleLockMsg();
+  var bayaniCard = document.getElementById('rc-bayani');
+  var lakanCard = document.getElementById('rc-lakan');
+  var confirmBtn = document.getElementById('role-confirm-btn');
+
+  if (msg) {
+    if (banner) { banner.style.display = 'block'; }
+    var msgEl = document.getElementById('role-lock-msg');
+    if (msgEl) msgEl.textContent = msg;
+    // Disable the card that is NOT the active role
+    if (activeJob) {
+      var lockedRole = activeJob.type === 'bayani' ? 'lakan' : 'bayani';
+      var lockedCard = document.getElementById('rc-' + lockedRole);
+      if (lockedCard) {
+        lockedCard.style.opacity = '0.35';
+        lockedCard.style.pointerEvents = 'none';
+      }
+      var allowedCard = document.getElementById('rc-' + activeJob.type);
+      if (allowedCard) {
+        allowedCard.style.opacity = '1';
+        allowedCard.style.pointerEvents = 'none'; // also locked — must complete first
+      }
+      // Auto-select active role and show confirm locked
+      activeRole = activeJob.type;
+      if (confirmBtn) {
+        confirmBtn.style.display = 'flex';
+        confirmBtn.textContent = 'CONTINUE AS ' + activeJob.type.toUpperCase() + ' →';
+        confirmBtn.className = 'btn ' + (activeJob.type === 'bayani' ? 'btn-green' : 'btn-sun');
+      }
+    }
+  } else {
+    if (banner) { banner.style.display = 'none'; }
+    if (bayaniCard) { bayaniCard.style.opacity = '1'; bayaniCard.style.pointerEvents = ''; }
+    if (lakanCard) { lakanCard.style.opacity = '1'; lakanCard.style.pointerEvents = ''; }
+  }
+}
+
 // ── LAYOUT FIX: works in any environment including iframes ──
 function fixLayout(){
   var h = window.innerHeight;
@@ -718,4 +839,3 @@ function fixLayout(){
 }
 fixLayout();
 window.addEventListener('resize', fixLayout);
-
