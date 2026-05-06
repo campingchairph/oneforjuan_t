@@ -351,6 +351,11 @@
         <span class="badge badge-sun">Post a quest</span>
       </div>
     </div>
+    <!-- role lock banner -->
+    <div id="role-lock-banner" style="display:none;background:#D63E1E0E;border:1px solid #D63E1E33;border-radius:10px;padding:12px 14px;margin-bottom:16px;display:none;">
+      <div style="font-family:var(--px);font-size:7px;color:var(--ember);margin-bottom:4px;">🔒 ROLE LOCKED</div>
+      <div id="role-lock-msg" style="font-size:12px;color:#8A2010;line-height:1.6;"></div>
+    </div>
     <div class="card" style="margin-bottom:16px;padding:14px 16px;">
       <div style="font-family:var(--px);font-size:7px;color:var(--ink-soft);margin-bottom:10px;letter-spacing:1px;">SAFETY RULES · ALWAYS APPLY</div>
       <div style="display:flex;gap:10px;margin-bottom:8px;font-size:12px;color:var(--ink-mid);align-items:flex-start;"><span style="font-size:14px;flex-shrink:0;">🏛️</span><span>Bayanis only pin to public landmarks</span></div>
@@ -367,7 +372,7 @@
 ════════════════════════════════════════ -->
 <div class="screen" id="s-bmap" style="background:var(--bg);">
   <div style="background:var(--ink);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
-    <button onclick="go('s-role')" style="font-family:var(--px);font-size:7px;color:#706050;background:none;border:none;cursor:pointer;letter-spacing:1px;">← SWITCH ROLE</button>
+    <button onclick="tryGoRole()" style="font-family:var(--px);font-size:7px;color:#706050;background:none;border:none;cursor:pointer;letter-spacing:1px;">← SWITCH ROLE</button>
     <div style="font-family:var(--px);font-size:7px;color:var(--green);background:#1F8A4C18;border:1px solid var(--green);border-radius:4px;padding:4px 10px;">BAYANI MODE</div>
   </div>
   <!-- pixel map -->
@@ -470,15 +475,8 @@
       <button id="end-live-btn" class="btn btn-primary" style="width:auto;padding:10px 14px;font-size:7px;margin:0;flex-shrink:0;display:none;" onclick="endLive()">END LIVE</button>
     </div>
 
-    <div class="section-label">ACTIVE QUESTS NEARBY</div>
-    <div class="quest-card" onclick="openSheet('sheet-quest')" style="cursor:pointer;">
-      <div class="quest-header">BUY ITEM · SM SAN MATEO<span class="quest-timer">14:22</span></div>
-      <div style="font-size:11px;color:#A09080;margin-bottom:8px;">0.3 km away · Lakan Lvl 2 · ⭐ 4.8</div>
-      <div class="quest-item-row"><span>Milo 1kg × 1</span><span>₱95</span></div>
-      <div class="quest-item-row"><span>Safeguard bar × 3</span><span>₱90</span></div>
-      <div class="quest-offer">OFFER: ₱120</div>
-      <div style="font-size:10px;color:#A09080;text-align:center;">Tap to see full quest</div>
-    </div>
+    <div class="section-label" id="quest-section-label" style="display:none;">QUESTS NEARBY</div>
+    <div id="quest-categories" style="display:none;"></div>
   </div>
 
   <div class="bottom-nav" id="bnav-bayani"></div>
@@ -589,7 +587,7 @@
       <div>Funds held in escrow are released automatically once the Lakan confirms receipt. If no confirmation in 2 hours, funds auto-release.</div>
     </div>
 
-    <button class="btn btn-green" onclick="go('s-bearnings')">MARK QUEST COMPLETE ✓</button>
+    <button class="btn btn-green" onclick="clearActiveJob();go('s-bearnings')">MARK QUEST COMPLETE ✓</button>
   </div>
   <div class="bottom-nav" id="bnav-receipt"></div>
 </div>
@@ -659,7 +657,7 @@
 <!-- ════ S12 LAKAN MAP ════ -->
 <div class="screen" id="s-lmap" style="background:var(--bg);">
   <div style="background:var(--ink);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
-    <button onclick="go('s-role')" style="font-family:var(--px);font-size:7px;color:#706050;background:none;border:none;cursor:pointer;letter-spacing:1px;">← SWITCH ROLE</button>
+    <button onclick="tryGoRole()" style="font-family:var(--px);font-size:7px;color:#706050;background:none;border:none;cursor:pointer;letter-spacing:1px;">← SWITCH ROLE</button>
     <div style="font-family:var(--px);font-size:7px;color:var(--sun);background:#E8991A18;border:1px solid var(--sun);border-radius:4px;padding:4px 10px;">LAKAN MODE</div>
   </div>
   <div class="map-area">
@@ -796,7 +794,7 @@
       <div style="display:flex;justify-content:space-between;font-size:14px;font-weight:700;border-top:1px solid var(--border);padding-top:8px;margin-top:4px;"><span style="color:var(--ink-soft);">Total you pay</span><span style="color:var(--ember);" id="g-total">₱323.50</span></div>
     </div>
     <div class="info-box info-green" style="margin-bottom:16px;"><span style="font-size:14px;flex-shrink:0;">🔒</span><div>Payment held in escrow — released only after you confirm completion.</div></div>
-    <button class="btn btn-sun" onclick="go('s-lwaiting')" style="margin-bottom:8px;">POST QUEST →</button>
+    <button class="btn btn-sun" onclick="setActiveJob('lakan');go('s-lwaiting')" style="margin-bottom:8px;">POST QUEST →</button>
     <button class="btn btn-ghost" onclick="go('s-lbrowse')">← Back</button>
   </div>
   <div class="bottom-nav" id="bnav-lq"></div>
@@ -879,7 +877,7 @@
       <div style="display:flex;gap:8px;justify-content:center;margin-bottom:14px;" id="star-row-l"></div>
       <textarea class="form-input" placeholder="Optional: Leave a note for Ate Len..."></textarea>
     </div>
-    <button class="btn btn-sun" onclick="go('s-ldone')" style="margin-bottom:8px;">CONFIRM &amp; RELEASE PAYMENT →</button>
+    <button class="btn btn-sun" onclick="clearActiveJob();go('s-ldone')" style="margin-bottom:8px;">CONFIRM &amp; RELEASE PAYMENT →</button>
     <button class="btn btn-ghost" onclick="openSheet('sheet-dispute')">Report an Issue</button>
   </div>
   <div class="bottom-nav" id="bnav-lc"></div>
