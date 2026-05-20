@@ -137,6 +137,65 @@ Ban: confirmed bad/illegal report
 
 ---
 
+## Core Concept
+ONEforJuan is a community favor marketplace. NOT a delivery app, NOT a bidding platform.
+Think: neighborhood quest board. People post small personal favors, others accept and do them.
+
+**Examples of valid favors:**
+- "Walk my dog around the block"
+- "Accompany me to Star City rides, I hate going alone"
+- "Buy me a Milo 1kg from the nearby store"
+- "I need a small custom cake for my kid's birthday"
+- "Queue for me at LTO"
+
+**NOT this app:**
+- No Grab/Lalamove-style delivery routes
+- No bidding — poster sets the offer, first to accept gets it
+- No professional services (pabili/pasuyo courier style)
+
+---
+
+## Favor Workflow
+```
+1. User posts a favor
+   - Sets title, description, offer (₱), location, time, category
+   - Visible to all verified users within 10–20km radius
+   - Offer is FINAL — no negotiation, no bidding
+
+2. Another user accepts
+   - First come first serve — first tap wins
+   - Favor status → ACTIVE
+   - Both users get notified
+
+3. Favor is done
+   - Acceptor marks complete
+   - Poster confirms
+   - Both get +pts
+
+4. Favor fails
+   - No-show / not completed
+   - Acceptor loses badge pts
+   - Poster can re-post
+
+5. Bad/illegal favor
+   - Anyone can report
+   - Admin reviews
+   - Confirmed = permanent ban
+```
+
+---
+
+## User State Rules
+```
+- No hard role lock (anyone can post AND accept)
+- Active request (posted, waiting) → can still browse and accept OTHER favors
+- Active favor (accepted) → can still post new requests
+- Failed favor → -pts applied immediately
+- Banned → app access revoked
+```
+
+---
+
 ## App Structure
 
 ### Bottom Nav (4 tabs)
