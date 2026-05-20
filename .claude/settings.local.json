@@ -5,7 +5,8 @@
       "Bash(powershell -Command \"\\(Get-Content 'oneforjuan.js'\\)[1..359] | Set-Content 'oneforjuan.js' -Encoding utf8\")",
       "Bash(powershell -Command \"\\(Get-Content 'index.html'\\)[1..528] | Set-Content 'index.html' -Encoding utf8\")",
       "Bash(powershell -Command \"Write-Host '--- CSS ---'; \\(Get-Content 'oneforjuan.css'\\)[0]; \\(Get-Content 'oneforjuan.css'\\)[-1]; Write-Host '--- JS ---'; \\(Get-Content 'oneforjuan.js'\\)[0]; \\(Get-Content 'oneforjuan.js'\\)[-1]; Write-Host '--- HTML ---'; \\(Get-Content 'index.html'\\)[0]; \\(Get-Content 'index.html'\\)[-1]\")",
-      "Bash(powershell -Command \"[System.IO.File]::ReadAllBytes\\('oneforjuan.js'\\)[0..10] -join ' '\")"
+      "Bash(powershell -Command \"[System.IO.File]::ReadAllBytes\\('oneforjuan.js'\\)[0..10] -join ' '\")",
+      "Bash(powershell -Command \"[System.IO.File]::ReadAllBytes\\('oneforjuan.js'\\)[0..5] -join ' '\")"
     ]
   }
 }
