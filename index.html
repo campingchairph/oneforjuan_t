@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-<title>ONEforJuan â€” Favor Quest</title>
+<title>ONEforJuan &mdash; Favor Quest</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="oneforjuan.css"/>
@@ -11,25 +11,17 @@
 <body>
 <div id="app">
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     S-SPLASH
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════ S-SPLASH ════ -->
 <div class="screen active" id="s-splash" style="background:#1A1228;overflow:hidden;animation:skyRise 2.4s ease forwards;">
-
   <div class="stars-bg" id="splash-stars" style="animation:starFade 2.4s ease forwards;"></div>
+  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:0 24px 32px;position:relative;z-index:5;">
 
-  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:0 24px 32px;position:relative;z-index:5;gap:0;">
-
-    <!-- pixel city SVG -->
     <div style="flex-shrink:0;display:flex;justify-content:center;width:100%;margin-bottom:8px;">
       <svg width="380" height="160" viewBox="0 0 380 160" style="image-rendering:pixelated;display:block;max-width:100%;">
-        <!-- sky gradient bg -->
         <rect width="380" height="160" fill="transparent"/>
-        <!-- ground -->
         <rect y="118" width="380" height="42" fill="#C4A870"/>
         <rect y="128" width="380" height="22" fill="#B09870"/>
         <rect y="138" width="380" height="4" fill="#887860AA"/>
-        <!-- road lines -->
         <rect x="0"   y="150" width="28" height="3" fill="#E0D090"/>
         <rect x="48"  y="150" width="28" height="3" fill="#E0D090"/>
         <rect x="96"  y="150" width="28" height="3" fill="#E0D090"/>
@@ -38,7 +30,6 @@
         <rect x="240" y="150" width="28" height="3" fill="#E0D090"/>
         <rect x="288" y="150" width="28" height="3" fill="#E0D090"/>
         <rect x="336" y="150" width="28" height="3" fill="#E0D090"/>
-        <!-- SM building -->
         <rect x="12"  y="36" width="98" height="84" fill="#6878B0"/>
         <rect x="10"  y="34" width="102" height="5" fill="#2C1810"/>
         <rect x="30"  y="34" width="60" height="10" fill="#F4A62A"/>
@@ -53,18 +44,15 @@
         <rect x="58"  y="66" width="14" height="10" fill="#FEF3D0"/>
         <rect x="76"  y="66" width="14" height="10" fill="#3848A0"/>
         <rect x="46"  y="98" width="30" height="22" fill="#2838A0"/>
-        <!-- 7-eleven -->
         <rect x="138" y="82" width="50" height="38" fill="#D09868"/>
         <rect x="136" y="80" width="54" height="5" fill="#2C1810"/>
         <rect x="146" y="88" width="14" height="12" fill="#FEF3D0"/>
         <rect x="164" y="88" width="14" height="12" fill="#FEF3D0"/>
         <rect x="152" y="102" width="14" height="18" fill="#60381A"/>
         <text x="162" y="86" text-anchor="middle" font-family="'Press Start 2P'" font-size="4" fill="#2C1810">7-11</text>
-        <!-- tree -->
         <rect x="220" y="100" width="10" height="20" fill="#8A5020"/>
         <rect x="208" y="76" width="34" height="28" fill="#3A8020" rx="2"/>
         <rect x="214" y="70" width="22" height="14" fill="#5AA830" rx="2"/>
-        <!-- LTO building -->
         <rect x="260" y="50" width="88" height="70" fill="#C8B888"/>
         <rect x="258" y="48" width="92" height="5" fill="#2C1810"/>
         <rect x="270" y="60" width="14" height="10" fill="#FEF3D0"/>
@@ -72,11 +60,9 @@
         <rect x="306" y="60" width="14" height="10" fill="#FEF3D0"/>
         <rect x="278" y="78" width="22" height="28" fill="#7A6040"/>
         <text x="305" y="56" text-anchor="middle" font-family="'Press Start 2P'" font-size="4" fill="#2C1810">LTO</text>
-        <!-- flag -->
         <rect x="350" y="18" width="3" height="34" fill="#2C1810"/>
         <rect x="353" y="18" width="20" height="6" fill="#D95F3B"/>
         <rect x="353" y="24" width="20" height="6" fill="#F4A62A"/>
-        <!-- walking figure 1 -->
         <g style="animation:walkRight 3s linear infinite alternate">
           <rect x="114" y="114" width="10" height="10" fill="#D4A878"/>
           <rect x="112" y="112" width="14" height="4" fill="#2C1810"/>
@@ -86,7 +72,6 @@
           <rect x="114" y="134" width="4" height="8" fill="#7A5020"/>
           <rect x="120" y="134" width="4" height="8" fill="#7A5020"/>
         </g>
-        <!-- walking figure 2 -->
         <g style="animation:walkRight 2.4s linear infinite alternate-reverse">
           <rect x="238" y="112" width="10" height="10" fill="#C87848"/>
           <rect x="236" y="110" width="14" height="4" fill="#2C1810"/>
@@ -99,49 +84,41 @@
       </svg>
     </div>
 
-    <!-- title -->
     <div style="text-align:center;width:100%;padding-top:4px;">
       <div style="font-family:var(--px);font-size:7px;color:#604838;letter-spacing:3px;margin-bottom:10px;">THERE'S ALWAYS</div>
       <div style="margin-bottom:10px;line-height:1.1;">
         <span style="font-family:var(--px);font-size:24px;color:#fff;text-shadow:3px 3px 0 #B87010,-1px -1px 0 #B87010;">ONE</span><span style="font-family:var(--px);font-size:24px;color:var(--sun);text-shadow:3px 3px 0 #B87010;">for</span><span style="font-family:var(--px);font-size:24px;color:var(--ember);text-shadow:3px 3px 0 var(--ember-dark);">Juan</span>
       </div>
-      <div style="font-family:var(--px);font-size:7px;color:#A08060;letter-spacing:2px;margin-bottom:8px;">FAVORS Â· COMMUNITY Â· TRUST</div>
+      <div style="font-family:var(--px);font-size:7px;color:#A08060;letter-spacing:2px;margin-bottom:8px;">FAVORS &middot; COMMUNITY &middot; TRUST</div>
       <div style="font-family:var(--px);font-size:6px;color:#504030;letter-spacing:1px;animation:blink 1.2s step-end infinite;">LOADING...</div>
     </div>
-
   </div>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     S-ONBOARD
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════ S-ONBOARD ════ -->
 <div class="screen" id="s-onboard" style="background:var(--bg);">
   <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px 0;">
     <div style="font-family:var(--px);font-size:8px;color:var(--sun-dark);">ONEforJuan</div>
-    <button onclick="go('s-verify')" style="background:none;border:none;font-size:12px;color:var(--ink-faint);cursor:pointer;font-family:'DM Sans',sans-serif;">Skip</button>
+    <button onclick="go('s-verify')" style="background:none;border:none;font-size:13px;color:var(--ink-faint);cursor:pointer;font-family:'DM Sans',sans-serif;">Skip</button>
   </div>
   <div class="progress-dots" id="ob-dots"></div>
   <div style="display:flex;flex-direction:column;flex:1;overflow:hidden;" id="ob-body"></div>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     S-VERIFY
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════ S-VERIFY ════ -->
 <div class="screen" id="s-verify" style="background:var(--bg);">
   <div class="dark-header">
     <div class="logo-big">ONEforJuan</div>
     <div class="logo-sub">IDENTITY VERIFICATION</div>
   </div>
   <div class="scroll-body">
-
     <div class="info-box info-sun" style="margin-bottom:16px;">
-      <span style="font-size:16px;flex-shrink:0;">ðŸ”’</span>
+      <span style="font-size:16px;flex-shrink:0;">&#128274;</span>
       <div>Verification takes <strong>24 hours</strong>. You'll get notified once approved. Your ID is never shown publicly.</div>
     </div>
-
     <div class="card" style="margin-bottom:14px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
-        <span style="font-size:18px;">ðŸ‘¤</span>
+        <span style="font-size:18px;">&#128100;</span>
         <span style="font-family:var(--px);font-size:8px;color:var(--ink);">Your Details</span>
       </div>
       <div class="form-group">
@@ -153,102 +130,85 @@
         <input class="form-input" type="date"/>
       </div>
     </div>
-
-    <div class="card" style="margin-bottom:14px;">
+    <div class="card" style="margin-bottom:16px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
-        <span style="font-size:18px;">ðŸªª</span>
+        <span style="font-size:18px;">&#128247;</span>
         <span style="font-family:var(--px);font-size:8px;color:var(--ink);">Upload ID Photo</span>
       </div>
       <div class="upload-box" onclick="toggleUpload(this,'ID photo uploaded!')">
-        <div style="font-size:28px;margin-bottom:6px;">ðŸ“·</div>
+        <div style="font-size:28px;margin-bottom:6px;">&#128247;</div>
         <div style="font-weight:600;font-size:13px;">Tap to upload your ID</div>
         <div style="font-size:11px;color:var(--ink-soft);margin-top:4px;">PhilSys, Driver's License, Passport, UMID, Postal, Voter's ID</div>
-        <div style="font-size:11px;color:var(--ink-soft);">All 4 corners visible Â· No glare</div>
+        <div style="font-size:11px;color:var(--ink-soft);">All 4 corners visible &middot; No glare</div>
       </div>
     </div>
-
-    <button class="btn btn-sun" onclick="go('s-home')" style="margin-bottom:10px;">SUBMIT FOR REVIEW â†’</button>
+    <button class="btn btn-sun" onclick="go('s-home')" style="margin-bottom:10px;">SUBMIT FOR REVIEW &rarr;</button>
     <div style="text-align:center;font-size:11px;color:var(--ink-faint);line-height:1.6;">Verification takes 24hrs. You'll get notified.</div>
   </div>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     S-HOME
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════ S-HOME ════ -->
 <div class="screen" id="s-home" style="background:var(--bg);">
 
-  <!-- mini map -->
-  <div class="map-area" style="background:linear-gradient(180deg,var(--sky) 0%,var(--sky) 30%,#8DC870 30%,#7AB860 100%);">
-    <!-- pixel ground tiles -->
-    <div style="position:absolute;bottom:0;left:0;right:0;height:56%;background:repeating-linear-gradient(90deg,#7AB860 0px,#7AB860 32px,#8DC870 32px,#8DC870 64px);opacity:.6;"></div>
-    <!-- path -->
-    <div style="position:absolute;bottom:20%;left:10%;width:80%;height:12px;background:#C4A870;border-radius:2px;"></div>
+  <div class="map-area" style="background:linear-gradient(180deg,#87CEEB 0%,#87CEEB 30%,#8DC870 30%,#7AB860 100%);">
+    <div style="position:absolute;bottom:0;left:0;right:0;height:56%;background:repeating-linear-gradient(90deg,#7AB860 0px,#7AB860 32px,#8DC870 32px,#8DC870 64px);opacity:.5;"></div>
+    <div style="position:absolute;bottom:20%;left:10%;width:80%;height:10px;background:#C4A870;border-radius:2px;"></div>
 
-    <!-- YOU pin -->
     <div class="map-pin" style="left:45%;bottom:24%;">
       <div class="pin-dot" style="background:var(--sun);"></div>
       <div class="pin-label you">YOU</div>
     </div>
-
-    <!-- favor pins -->
-    <div class="map-pin" style="left:22%;bottom:42%;" onclick="openFavorDetail(1)">
+    <div class="map-pin" style="left:20%;bottom:42%;" onclick="openFavorDetail(1)">
       <div class="pin-dot" style="background:var(--ember);"></div>
-      <div class="pin-label">ðŸ›ï¸ â‚±150</div>
+      <div class="pin-label">Errand &#8369;150</div>
     </div>
     <div class="map-pin" style="left:60%;bottom:50%;" onclick="openFavorDetail(2)">
       <div class="pin-dot" style="background:var(--ember);"></div>
-      <div class="pin-label">ðŸ• â‚±200</div>
+      <div class="pin-label">Pet &#8369;200</div>
     </div>
-    <div class="map-pin" style="left:72%;bottom:35%;" onclick="openFavorDetail(3)">
+    <div class="map-pin" style="left:72%;bottom:34%;" onclick="openFavorDetail(3)">
       <div class="pin-dot" style="background:var(--ember);"></div>
-      <div class="pin-label">ðŸ§‘â€ðŸ¤â€ðŸ§‘ â‚±300</div>
+      <div class="pin-label">Company &#8369;300</div>
     </div>
     <div class="map-pin" style="left:30%;bottom:58%;" onclick="openFavorDetail(4)">
       <div class="pin-dot" style="background:var(--ember);"></div>
-      <div class="pin-label">ðŸ“„ â‚±500</div>
+      <div class="pin-label">Gov't &#8369;500</div>
     </div>
-
-    <!-- HUD -->
-    <div class="map-hud" style="top:10px;right:10px;background:#2C1810EE;border:2px solid #4A2A18;border-radius:4px;padding:6px 10px;">
-      <div style="font-family:var(--px);font-size:6px;color:var(--sun);line-height:1.8;">ðŸ“ San Mateo, Rizal<br>ðŸŒ» 5 favors nearby</div>
+    <div style="position:absolute;top:10px;right:10px;background:#2C1810EE;border:2px solid #4A2A18;border-radius:4px;padding:6px 10px;z-index:20;">
+      <div style="font-family:var(--px);font-size:6px;color:var(--sun);line-height:1.8;">San Mateo, Rizal<br>5 favors nearby</div>
     </div>
   </div>
 
-  <!-- favor feed -->
   <div style="position:relative;flex:1;display:flex;flex-direction:column;overflow:hidden;">
     <div class="scroll-body" style="padding-bottom:70px;">
-      <div style="font-family:var(--px);font-size:7px;color:var(--ink-faint);letter-spacing:2px;margin-bottom:14px;">FAVORS NEAR YOU Â· 10KM</div>
+      <div style="font-family:var(--px);font-size:7px;color:var(--ink-faint);letter-spacing:2px;margin-bottom:14px;">FAVORS NEAR YOU &middot; 10KM</div>
       <div id="favor-feed"></div>
     </div>
-    <!-- FAB -->
-    <button class="fab" onclick="openSheet('sheet-post')">ï¼‹ POST A FAVOR</button>
+    <button class="fab" onclick="openSheet('sheet-post')">+ POST A FAVOR</button>
   </div>
 
-  <!-- bottom nav -->
   <nav class="bottom-nav">
     <button class="nav-btn nav-active" id="nav-home" onclick="go('s-home')">
-      <span class="nav-icon">ðŸ </span>
+      <span class="nav-icon">&#127968;</span>
       <span class="nav-label" style="color:var(--sun);">HOME</span>
     </button>
-    <button class="nav-btn nav-inactive" id="nav-activity" onclick="go('s-activity')">
-      <span class="nav-icon">ðŸ“‹</span>
+    <button class="nav-btn nav-inactive" id="nav-activity" onclick="go('s-activity')" style="position:relative;">
+      <span class="nav-icon">&#128203;</span>
       <span class="nav-label">ACTIVITY</span>
       <span class="notif-dot"></span>
     </button>
     <button class="nav-btn nav-inactive" id="nav-badges" onclick="go('s-badges')">
-      <span class="nav-icon">ðŸ…</span>
+      <span class="nav-icon">&#127941;</span>
       <span class="nav-label">BADGES</span>
     </button>
     <button class="nav-btn nav-inactive" id="nav-settings" onclick="go('s-settings')">
-      <span class="nav-icon">âš™ï¸</span>
+      <span class="nav-icon">&#9881;</span>
       <span class="nav-label">SETTINGS</span>
     </button>
   </nav>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     S-ACTIVITY
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════ S-ACTIVITY ════ -->
 <div class="screen" id="s-activity" style="background:var(--bg);">
   <div class="dark-header">
     <div class="logo-big">Activity</div>
@@ -263,23 +223,21 @@
   </div>
   <nav class="bottom-nav">
     <button class="nav-btn nav-inactive" id="nav-home" onclick="go('s-home')">
-      <span class="nav-icon">ðŸ </span><span class="nav-label">HOME</span>
+      <span class="nav-icon">&#127968;</span><span class="nav-label">HOME</span>
     </button>
     <button class="nav-btn nav-active" id="nav-activity" onclick="go('s-activity')">
-      <span class="nav-icon">ðŸ“‹</span><span class="nav-label" style="color:var(--sun);">ACTIVITY</span>
+      <span class="nav-icon">&#128203;</span><span class="nav-label" style="color:var(--sun);">ACTIVITY</span>
     </button>
     <button class="nav-btn nav-inactive" id="nav-badges" onclick="go('s-badges')">
-      <span class="nav-icon">ðŸ…</span><span class="nav-label">BADGES</span>
+      <span class="nav-icon">&#127941;</span><span class="nav-label">BADGES</span>
     </button>
     <button class="nav-btn nav-inactive" id="nav-settings" onclick="go('s-settings')">
-      <span class="nav-icon">âš™ï¸</span><span class="nav-label">SETTINGS</span>
+      <span class="nav-icon">&#9881;</span><span class="nav-label">SETTINGS</span>
     </button>
   </nav>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     S-BADGES
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════ S-BADGES ════ -->
 <div class="screen" id="s-badges" style="background:var(--bg);">
   <div class="dark-header">
     <div class="logo-big">Badges</div>
@@ -287,61 +245,53 @@
   </div>
   <div class="scroll-body" style="padding-bottom:70px;">
     <div id="badges-content"></div>
-
-    <!-- badge tier reference -->
     <div style="font-family:var(--px);font-size:7px;color:var(--ink-faint);letter-spacing:2px;margin-bottom:12px;margin-top:4px;">BADGE TIERS</div>
     <div class="card">
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">ðŸŒ±</span><div><div style="font-family:var(--px);font-size:7px;color:var(--ink);">Baguhan</div><div style="font-size:11px;color:var(--ink-faint);">0â€“99 pts Â· Newcomer</div></div></div>
-        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">ðŸŒ¼</span><div><div style="font-family:var(--px);font-size:7px;color:var(--ink);">Kapit-bahay</div><div style="font-size:11px;color:var(--ink-faint);">100â€“299 pts Â· Neighbor</div></div></div>
-        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">ðŸŒ»</span><div><div style="font-family:var(--px);font-size:7px;color:var(--ink);">Tapat</div><div style="font-size:11px;color:var(--ink-faint);">300â€“699 pts Â· Trusted</div></div></div>
-        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">â­</span><div><div style="font-family:var(--px);font-size:7px;color:var(--ink);">Pinagkakatiwalaan</div><div style="font-size:11px;color:var(--ink-faint);">700â€“1499 pts Â· Reliable</div></div></div>
-        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">ðŸ…</span><div><div style="font-family:var(--px);font-size:7px;color:var(--ink);">Bayani</div><div style="font-size:11px;color:var(--ink-faint);">1500+ pts Â· Legend</div></div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">&#127807;</span><div><div style="font-family:var(--px);font-size:7px;color:var(--ink);">Baguhan</div><div style="font-size:11px;color:var(--ink-faint);">0&ndash;99 pts &middot; Newcomer</div></div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">&#127804;</span><div><div style="font-family:var(--px);font-size:7px;color:var(--ink);">Kapit-bahay</div><div style="font-size:11px;color:var(--ink-faint);">100&ndash;299 pts &middot; Neighbor</div></div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">&#127803;</span><div><div style="font-family:var(--px);font-size:7px;color:var(--ink);">Tapat</div><div style="font-size:11px;color:var(--ink-faint);">300&ndash;699 pts &middot; Trusted</div></div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">&#11088;</span><div><div style="font-family:var(--px);font-size:7px;color:var(--ink);">Pinagkakatiwalaan</div><div style="font-size:11px;color:var(--ink-faint);">700&ndash;1499 pts &middot; Reliable</div></div></div>
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:18px;">&#127941;</span><div><div style="font-family:var(--px);font-size:7px;color:var(--ink);">Bayani</div><div style="font-size:11px;color:var(--ink-faint);">1500+ pts &middot; Legend</div></div></div>
       </div>
     </div>
   </div>
   <nav class="bottom-nav">
     <button class="nav-btn nav-inactive" id="nav-home" onclick="go('s-home')">
-      <span class="nav-icon">ðŸ </span><span class="nav-label">HOME</span>
+      <span class="nav-icon">&#127968;</span><span class="nav-label">HOME</span>
     </button>
     <button class="nav-btn nav-inactive" id="nav-activity" onclick="go('s-activity')">
-      <span class="nav-icon">ðŸ“‹</span><span class="nav-label">ACTIVITY</span>
+      <span class="nav-icon">&#128203;</span><span class="nav-label">ACTIVITY</span>
     </button>
     <button class="nav-btn nav-active" id="nav-badges" onclick="go('s-badges')">
-      <span class="nav-icon">ðŸ…</span><span class="nav-label" style="color:var(--sun);">BADGES</span>
+      <span class="nav-icon">&#127941;</span><span class="nav-label" style="color:var(--sun);">BADGES</span>
     </button>
     <button class="nav-btn nav-inactive" id="nav-settings" onclick="go('s-settings')">
-      <span class="nav-icon">âš™ï¸</span><span class="nav-label">SETTINGS</span>
+      <span class="nav-icon">&#9881;</span><span class="nav-label">SETTINGS</span>
     </button>
   </nav>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     S-SETTINGS
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════ S-SETTINGS ════ -->
 <div class="screen" id="s-settings" style="background:var(--bg);">
   <div class="dark-header">
     <div class="logo-big">Settings</div>
     <div class="logo-sub">ACCOUNT &amp; PREFERENCES</div>
   </div>
   <div class="scroll-body" style="padding-bottom:70px;">
-
-    <!-- profile (display only) -->
     <div style="font-family:var(--px);font-size:7px;color:var(--ink-faint);letter-spacing:2px;margin-bottom:12px;">ACCOUNT</div>
     <div class="card" style="margin-bottom:16px;">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-        <div style="width:44px;height:44px;background:var(--sun-light);border:2px solid var(--sun);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:22px;">ðŸŒ»</div>
+        <div style="width:44px;height:44px;background:var(--sun-light);border:2px solid var(--sun);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:22px;">&#127803;</div>
         <div>
           <div style="font-family:var(--px);font-size:8px;color:var(--ink);">Seph Reyes</div>
           <div style="font-size:12px;color:var(--ink-soft);margin-top:4px;">@seph_reyes</div>
-          <div style="font-size:12px;color:var(--ink-faint);">ðŸŒ» Tapat Â· 340 pts</div>
+          <div style="font-size:12px;color:var(--ink-faint);">&#127803; Tapat &middot; 340 pts</div>
         </div>
       </div>
-      <div style="font-size:12px;color:var(--ink-soft);padding-top:10px;border-top:1px solid var(--border-soft);">ðŸ“± +63 917 xxx xxxx</div>
-      <div style="font-size:12px;color:var(--ink-soft);margin-top:6px;">ðŸ“ San Mateo, Rizal</div>
+      <div style="font-size:12px;color:var(--ink-soft);padding-top:10px;border-top:1px solid var(--border-soft);">&#128241; +63 917 xxx xxxx</div>
+      <div style="font-size:12px;color:var(--ink-soft);margin-top:6px;">&#128205; San Mateo, Rizal</div>
     </div>
-
-    <!-- notifications -->
     <div style="font-family:var(--px);font-size:7px;color:var(--ink-faint);letter-spacing:2px;margin-bottom:12px;">NOTIFICATIONS</div>
     <div class="card" style="margin-bottom:16px;">
       <div class="toggle-wrap">
@@ -353,14 +303,12 @@
       </div>
       <div class="toggle-wrap" style="border-bottom:none;">
         <div>
-          <div style="font-size:13px;font-weight:600;color:var(--ink);">Favor accepted/completed</div>
+          <div style="font-size:13px;font-weight:600;color:var(--ink);">Favor accepted / completed</div>
           <div style="font-size:11px;color:var(--ink-soft);">Activity on your requests and favors</div>
         </div>
         <div class="toggle on" onclick="toggleNotif(this)"><div class="toggle-knob"></div></div>
       </div>
     </div>
-
-    <!-- radius -->
     <div style="font-family:var(--px);font-size:7px;color:var(--ink-faint);letter-spacing:2px;margin-bottom:12px;">SEARCH RADIUS</div>
     <div class="card" style="margin-bottom:20px;">
       <div style="font-size:12px;color:var(--ink-soft);margin-bottom:12px;">Show favors within:</div>
@@ -370,57 +318,48 @@
         <button class="radius-btn" onclick="selectRadius(this)" style="flex:1;padding:10px 6px;border:2px solid var(--border);background:var(--card);border-radius:4px;font-family:var(--px);font-size:7px;cursor:pointer;color:var(--ink-soft);">20km</button>
       </div>
     </div>
-
-    <!-- logout -->
     <button class="btn btn-ember" onclick="go('s-splash')">LOG OUT</button>
-
-    <div style="text-align:center;margin-top:20px;font-family:var(--px);font-size:6px;color:var(--ink-faint);letter-spacing:1px;">v1.0.0 Â· METRO MANILA PILOT</div>
+    <div style="text-align:center;margin-top:20px;font-family:var(--px);font-size:6px;color:var(--ink-faint);letter-spacing:1px;">v1.0.0 &middot; METRO MANILA PILOT</div>
   </div>
   <nav class="bottom-nav">
     <button class="nav-btn nav-inactive" id="nav-home" onclick="go('s-home')">
-      <span class="nav-icon">ðŸ </span><span class="nav-label">HOME</span>
+      <span class="nav-icon">&#127968;</span><span class="nav-label">HOME</span>
     </button>
     <button class="nav-btn nav-inactive" id="nav-activity" onclick="go('s-activity')">
-      <span class="nav-icon">ðŸ“‹</span><span class="nav-label">ACTIVITY</span>
+      <span class="nav-icon">&#128203;</span><span class="nav-label">ACTIVITY</span>
     </button>
     <button class="nav-btn nav-inactive" id="nav-badges" onclick="go('s-badges')">
-      <span class="nav-icon">ðŸ…</span><span class="nav-label">BADGES</span>
+      <span class="nav-icon">&#127941;</span><span class="nav-label">BADGES</span>
     </button>
     <button class="nav-btn nav-active" id="nav-settings" onclick="go('s-settings')">
-      <span class="nav-icon">âš™ï¸</span><span class="nav-label" style="color:var(--sun);">SETTINGS</span>
+      <span class="nav-icon">&#9881;</span><span class="nav-label" style="color:var(--sun);">SETTINGS</span>
     </button>
   </nav>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     SHEET: POST A FAVOR
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════ SHEET: POST A FAVOR ════ -->
 <div class="sheet-overlay" id="sheet-post">
   <div class="sheet">
     <div class="sheet-handle"></div>
     <div class="sheet-header">
       <span class="sheet-title">POST A FAVOR</span>
-      <button class="sheet-close" onclick="closeSheet('sheet-post')">âœ•</button>
+      <button class="sheet-close" onclick="closeSheet('sheet-post')">&#x2715;</button>
     </div>
     <div class="sheet-body">
-
       <div class="form-group">
         <label class="form-label">FAVOR TITLE</label>
         <input class="form-input" type="text" placeholder="e.g. Buy me a Milo 1kg from Mini Stop" maxlength="60"/>
         <div style="font-size:11px;color:var(--ink-faint);margin-top:4px;text-align:right;">max 60 chars</div>
       </div>
-
       <div class="form-group">
         <label class="form-label">DESCRIPTION</label>
         <textarea class="form-input" placeholder="Describe what you need in detail..." maxlength="200" style="height:72px;"></textarea>
         <div style="font-size:11px;color:var(--ink-faint);margin-top:4px;text-align:right;">max 200 chars</div>
       </div>
-
       <div class="form-group">
-        <label class="form-label">OFFER (â‚±)</label>
+        <label class="form-label">OFFER (&#8369;)</label>
         <input class="form-input" type="number" placeholder="e.g. 150" min="0"/>
       </div>
-
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
         <div class="form-group" style="margin-bottom:0;">
           <label class="form-label">WHERE</label>
@@ -431,93 +370,64 @@
           <input class="form-input" type="text" placeholder="e.g. Today 3pm"/>
         </div>
       </div>
-
       <div class="form-group">
         <label class="form-label">CATEGORY</label>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px;">
-          <button class="cat-chip sel" onclick="selectCat(this)">ðŸ›ï¸ Errand</button>
-          <button class="cat-chip" onclick="selectCat(this)">ðŸ• Pet</button>
-          <button class="cat-chip" onclick="selectCat(this)">ðŸŽ‚ Food</button>
-          <button class="cat-chip" onclick="selectCat(this)">ðŸ§‘â€ðŸ¤â€ðŸ§‘ Company</button>
-          <button class="cat-chip" onclick="selectCat(this)">ðŸ“„ Gov't</button>
-          <button class="cat-chip" onclick="selectCat(this)">ðŸŽ‰ Event</button>
-          <button class="cat-chip" onclick="selectCat(this)">ðŸ”§ Help</button>
-          <button class="cat-chip" onclick="selectCat(this)">â“ Other</button>
+          <button class="cat-chip sel" onclick="selectCat(this)">Errand</button>
+          <button class="cat-chip" onclick="selectCat(this)">Pet</button>
+          <button class="cat-chip" onclick="selectCat(this)">Food</button>
+          <button class="cat-chip" onclick="selectCat(this)">Company</button>
+          <button class="cat-chip" onclick="selectCat(this)">Gov't</button>
+          <button class="cat-chip" onclick="selectCat(this)">Event</button>
+          <button class="cat-chip" onclick="selectCat(this)">Help</button>
+          <button class="cat-chip" onclick="selectCat(this)">Other</button>
         </div>
       </div>
-
       <div class="info-box info-sun" style="margin-bottom:16px;">
-        <span style="font-size:14px;flex-shrink:0;">ðŸ’¡</span>
+        <span style="font-size:14px;flex-shrink:0;">&#128161;</span>
         <div>Offer is <strong>final</strong>. First to accept gets the quest. No negotiation, no bidding.</div>
       </div>
-
-      <button class="btn btn-sun" onclick="closeSheet('sheet-post');showToast('Favor posted! Waiting for someone to accept.')">POST FAVOR â†’</button>
-
+      <button class="btn btn-sun" onclick="closeSheet('sheet-post');showToast('Favor posted! Waiting for someone to accept.')">POST FAVOR &rarr;</button>
     </div>
   </div>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     SHEET: FAVOR DETAIL
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════ SHEET: FAVOR DETAIL ════ -->
 <div class="sheet-overlay" id="sheet-favor-detail">
   <div class="sheet">
     <div class="sheet-handle"></div>
     <div class="sheet-header">
       <span class="sheet-title">FAVOR DETAIL</span>
-      <button class="sheet-close" onclick="closeSheet('sheet-favor-detail')">âœ•</button>
+      <button class="sheet-close" onclick="closeSheet('sheet-favor-detail')">&#x2715;</button>
     </div>
     <div class="sheet-body" id="favor-detail-body"></div>
   </div>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     SHEET: REPORT
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ════ SHEET: REPORT ════ -->
 <div class="sheet-overlay" id="sheet-report">
   <div class="sheet">
     <div class="sheet-handle"></div>
     <div class="sheet-header">
-      <span class="sheet-title">ðŸš© REPORT</span>
-      <button class="sheet-close" onclick="closeSheet('sheet-report')">âœ•</button>
+      <span class="sheet-title">REPORT FAVOR</span>
+      <button class="sheet-close" onclick="closeSheet('sheet-report')">&#x2715;</button>
     </div>
     <div class="sheet-body">
-
       <div style="font-size:13px;color:var(--ink-mid);margin-bottom:16px;line-height:1.6;">Why are you reporting this favor?</div>
-
-      <div class="radio-opt" onclick="selectReport(this)">
-        <div class="radio-dot"></div>
-        <div style="font-size:13px;color:var(--ink);">Illegal request</div>
-      </div>
-      <div class="radio-opt" onclick="selectReport(this)">
-        <div class="radio-dot"></div>
-        <div style="font-size:13px;color:var(--ink);">Scam / Fraud</div>
-      </div>
-      <div class="radio-opt" onclick="selectReport(this)">
-        <div class="radio-dot"></div>
-        <div style="font-size:13px;color:var(--ink);">No-show</div>
-      </div>
-      <div class="radio-opt" onclick="selectReport(this)">
-        <div class="radio-dot"></div>
-        <div style="font-size:13px;color:var(--ink);">Inappropriate content</div>
-      </div>
-      <div class="radio-opt" onclick="selectReport(this)" style="border-bottom:none;margin-bottom:14px;">
-        <div class="radio-dot"></div>
-        <div style="font-size:13px;color:var(--ink);">Other</div>
-      </div>
-
+      <div class="radio-opt" onclick="selectReport(this)"><div class="radio-dot"></div><div style="font-size:13px;color:var(--ink);">Illegal request</div></div>
+      <div class="radio-opt" onclick="selectReport(this)"><div class="radio-dot"></div><div style="font-size:13px;color:var(--ink);">Scam / Fraud</div></div>
+      <div class="radio-opt" onclick="selectReport(this)"><div class="radio-dot"></div><div style="font-size:13px;color:var(--ink);">No-show</div></div>
+      <div class="radio-opt" onclick="selectReport(this)"><div class="radio-dot"></div><div style="font-size:13px;color:var(--ink);">Inappropriate content</div></div>
+      <div class="radio-opt" onclick="selectReport(this)" style="border-bottom:none;margin-bottom:14px;"><div class="radio-dot"></div><div style="font-size:13px;color:var(--ink);">Other</div></div>
       <div class="form-group">
         <label class="form-label">ADDITIONAL DETAILS (optional)</label>
         <textarea class="form-input" placeholder="Describe what happened..." style="height:72px;"></textarea>
       </div>
-
       <div class="info-box info-ember" style="margin-bottom:16px;">
-        <span style="font-size:14px;flex-shrink:0;">âš ï¸</span>
+        <span style="font-size:14px;flex-shrink:0;">&#9888;</span>
         <div>Confirmed reports result in <strong>permanent ban</strong>. False reports may affect your own badge standing.</div>
       </div>
-
-      <button class="btn btn-ember" onclick="closeSheet('sheet-report');showToast('Report submitted. Admin will review within 24hrs.')">SUBMIT REPORT â†’</button>
-
+      <button class="btn btn-ember" onclick="closeSheet('sheet-report');showToast('Report submitted. Admin will review within 24hrs.')">SUBMIT REPORT &rarr;</button>
     </div>
   </div>
 </div>
